@@ -1,0 +1,2 @@
+include ':app', ':graphlibrary'
+rootProject.name='Phone Arena'
