@@ -19,15 +19,18 @@ public class Hasil {
     static OutputStreamWriter  outStreamWriter = null;
 
     public static void createWriter() throws IOException {
+        System.out.println("test 5");
         File dir = new File(path);
         dir.mkdirs();
         File file = null;
-        file = new File(new File(path), "/WatermarkPA1.txt");
+        System.out.println("test 6");
+        file = new File(new File(path), "/WatermarkTAII.txt");
+        System.out.println("test 7");
         file.createNewFile();
+        System.out.println("test 8");
         outStream = new FileOutputStream(file, true);
         outStreamWriter = new OutputStreamWriter(outStream);
-        System.out.println("Success");
-
+        System.out.println("test 9");
     }
 
     public static void buildWatermark( String watermark) throws IOException {

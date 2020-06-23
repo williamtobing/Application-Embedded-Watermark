@@ -1,9 +1,11 @@
 package com.develops.phonearena;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private int STORAGE_PERMISSION_CODE = 1;
 
     private static final String TAG = "MainActivity";
 
@@ -37,12 +40,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void watermark() throws IOException {
-//        System.out.println("Hello");
-//        //  TextView ascii = findViewById(R.id.n_ascii);
+        ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
         String watermark = "cdefghijklmnopqrstuvwxyz{|}~";
         Watermark kata= new Watermark(watermark);
         Hasil.buildWatermark(kata.nama_watermark);
-
     }
 
     @Override
