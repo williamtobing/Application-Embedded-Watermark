@@ -23,7 +23,7 @@ public class Hasil {
         dir.mkdirs();
         File file = null;
         System.out.println("test 6");
-        file = new File(new File(path), "/Android Watermark Ta.txt");
+        file = new File(new File(path), "/AndroidApp-Watermark-TA07.txt");
         System.out.println("test 7");
         file.createNewFile();
         System.out.println("test 8");
