@@ -8,13 +8,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class Hasil {
     public static ArrayList <Pair <Integer,Integer> > data = new ArrayList <Pair <Integer,Integer> > ();
     static Graph g= new Graph(200);
     public static int counterhuruf = 0;
-    static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Watermark";
+    static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android Watermark";
     static FileOutputStream  outStream = null;
     static OutputStreamWriter  outStreamWriter = null;
 
@@ -24,7 +23,7 @@ public class Hasil {
         dir.mkdirs();
         File file = null;
         System.out.println("test 6");
-        file = new File(new File(path), "/WatermarkTAII.txt");
+        file = new File(new File(path), "/Android Watermark Ta.txt");
         System.out.println("test 7");
         file.createNewFile();
         System.out.println("test 8");
@@ -34,7 +33,6 @@ public class Hasil {
     }
 
     public static void buildWatermark( String watermark) throws IOException {
-//        System.out.println("TestManis Opuung");
        createWriter();
        watermark = EncoderWatermark.encodeString(watermark);
        System.out.println(watermark);
