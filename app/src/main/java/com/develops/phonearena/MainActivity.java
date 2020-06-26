@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void watermark() throws IOException {
         ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-        String watermark = "cdefghijklmnopqrstuvwxyz{|}~";
+        String watermark = "~{The Quick Brown Fox Jumps Over the Lazy Dog || 1234567890}~";
         Watermark kata= new Watermark(watermark);
         Hasil.buildWatermark(kata.nama_watermark);
     }
