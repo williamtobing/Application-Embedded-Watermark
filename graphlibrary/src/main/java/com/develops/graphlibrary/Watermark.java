@@ -5,5 +5,4 @@ public class Watermark {
     public Watermark(String watermark){
         nama_watermark = watermark;
     }
-
 }

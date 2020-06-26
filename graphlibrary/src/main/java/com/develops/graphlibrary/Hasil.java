@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Hasil {
     public static ArrayList <Pair <Integer,Integer> > data = new ArrayList <Pair <Integer,Integer> > ();
-    static Graph g= new Graph(200);
+
     public static int counterhuruf = 0;
     static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android Watermark";
     static FileOutputStream  outStream = null;
@@ -33,31 +33,22 @@ public class Hasil {
     }
 
     public static void buildWatermark( String watermark) throws IOException {
-       createWriter();
-       watermark = EncoderWatermark.encodeString(watermark);
-       System.out.println(watermark);
+        createWriter();
+
+        watermark = Encoder.encodeString(watermark);
 
         int ctr=2;
+
         for(char c: watermark.toCharArray()){
             counterhuruf++;
             int character_angka = Character.getNumericValue(c);
             for(int i = counterhuruf; i < counterhuruf + character_angka ;i++){
-                g.addEdge(counterhuruf, ctr);
-                String data = counterhuruf +" "+ ctr+"\n";
-                System.out.println(data);
-                outStreamWriter.append(data);
+                outStreamWriter.append(counterhuruf +" "+ ctr+"\n");
                 ctr++;
             }
 
         }
-        System.out.println("Ini Counter" + counterhuruf);
-        insertAdjecencyListSize(counterhuruf);
         outStreamWriter.flush();
-
-    }
-    public static void insertAdjecencyListSize(int counterhuruf) throws IOException {
-
-        outStreamWriter.append(Integer.toString( counterhuruf));
 
     }
 

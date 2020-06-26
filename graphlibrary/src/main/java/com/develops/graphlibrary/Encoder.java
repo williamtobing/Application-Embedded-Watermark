@@ -1,6 +1,6 @@
 package com.develops.graphlibrary;
 
-public class EncoderWatermark {
+public class Encoder {
     public static String encodeString(String watermark ){
         String watermarkAscii="";
         for (char c : watermark.toCharArray()){
